@@ -47,15 +47,15 @@ function searchProduct($Product_name){
 
 function addProduct($data){
 	$conn = db_conn();
-    $selectQuery = "INSERT into products (Name, BuyingPrice, SellingPrice)
-VALUES (:name, :BuyingPrice, :SellingPrice)";
+    $selectQuery = "INSERT into products (Name, BuyingPrice, SellingPrice,Displayable)
+VALUES (:name, :BuyingPrice, :SellingPrice, :Displayable)";
     try{
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
         	':name' => $data['name'],
         	':BuyingPrice' => $data['BuyingPrice'],
-        	':SellingPrice' => $data['SellingPrice']
-        	
+        	':SellingPrice' => $data['SellingPrice'],
+        	':Displayable' => $data['Displayable']
         ]);
     }catch(PDOException $e){
         echo $e->getMessage();
@@ -68,11 +68,12 @@ VALUES (:name, :BuyingPrice, :SellingPrice)";
 
 function updateProduct($id, $data){
     $conn = db_conn();
-    $selectQuery = "UPDATE products set Name = ?, BuyingPrice = ?, SellingPrice = ? where ID = ?";
+    $selectQuery = "UPDATE products set Name = ?, BuyingPrice = ?, SellingPrice = ?, Displayable = ? where ID = ?";
     try{
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-        	$data['name'], $data['BuyingPrice'], $data['SellingPrice'], $id
+        	$data['name'], $data['BuyingPrice'], $data['SellingPrice'],
+            $data['Displayable'], $id
         ]);
     }catch(PDOException $e){
         echo $e->getMessage();

@@ -26,10 +26,14 @@ $product = fetchProduct($_GET['id']);
   <input value="<?php echo $product['BuyingPrice'] ?>" type="text" id="BuyingPrice" name="BuyingPrice"><br>
   <label for="SellingPrice">Selling Price:</label><br>
   <input value="<?php echo $product['SellingPrice'] ?>" type="text" id="SellingPrice" name="SellingPrice"><br><br>
+  <label for="display"> Display</label><br>
+  <input  value="Yes" type="checkbox" id="display" name="display" >
   
+
   <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-  <input type="checkbox" name="Display" /> Display
+
   <br><br>
+
   <input type="submit" name = "updateProduct" value="Save">
  
 </form> 

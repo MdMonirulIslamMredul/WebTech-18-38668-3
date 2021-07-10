@@ -7,6 +7,14 @@ if (isset($_POST['createProduct'])) {
 	$data['BuyingPrice'] = $_POST['BuyingPrice'];
 	$data['SellingPrice'] = $_POST['SellingPrice'];
 
+	if(isset($_POST['display']))
+	{
+		$data['Displayable'] = $_POST['display'];
+	}
+	else{
+		$data['Displayable'] = "No";
+	}
+
 
 	
 

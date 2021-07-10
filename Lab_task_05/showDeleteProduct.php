@@ -27,6 +27,8 @@ $product = fetchProduct($_GET['id']);
   <br>
   <label for="SellingPrice">Selling Price:</label><?php echo $product['SellingPrice'] ?>
   <br>
+  <label for="Displayable">Displayable:</label><?php echo $product['Displayable'] ?>
+  <br>
   
   <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
   <br><br>

@@ -18,9 +18,10 @@
   <label for="BuyingPrice">Buying Price:</label><br>
   <input type="text" id="BuyingPrice" name="BuyingPrice"><br>
   <label for="SellingPrice">Selling Price:</label><br>
-  <input type="text" id="SellingPrice" name="SellingPrice"><br>
-  <br>
-  <input type="checkbox" name="Display" /> Display
+  <input type="text" id="SellingPrice" name="SellingPrice"><br><br>
+  <label for="display">Display</label>
+  <input type="checkbox" name="display" id="display" value="Yes">
+  
   <br><br>
   <input type="submit" name = "createProduct" value="Save">
 
